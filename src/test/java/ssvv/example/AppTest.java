@@ -44,4 +44,8 @@ public class AppTest
         service.deleteStudent("100");
         assertTrue(service.saveStudent("100","alfonso",314)==1);
     }
+    @Test
+    public void testAdd2(){
+        assertTrue(service.saveStudent("100","alfonso",314)==0);
+    }
 }
