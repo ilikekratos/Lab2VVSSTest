@@ -1,0 +1,6 @@
+Tema: 1
+Nota: 4.5
+Predata in saptamana: 10
+Deadline: 7
+Feedback: Nu
+
