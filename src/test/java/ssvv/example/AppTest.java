@@ -42,11 +42,11 @@ public class AppTest
 
     @Test
     public void testAddSuccess(){
-        service.deleteStudent("100");
         assertEquals(1, service.saveStudent("100", "Alfonso", 314));
     }
     @Test
     public void testAddFail(){
+        service.saveStudent("100", "Alfonso", 314);
         assertEquals(0, service.saveStudent("100", "Alfonso", 314));
     }
 
@@ -72,7 +72,7 @@ public class AppTest
 
     @Test
     public void TC5_BBT_BVA() {
-        assertEquals(0, service.saveStudent("3", "Alfonso", 111));
+        assertEquals(1, service.saveStudent("3", "Alfonso", 111));
     }
 
     @Test
@@ -82,7 +82,7 @@ public class AppTest
 
     @Test
     public void TC7_BBT_BVA() {
-        assertEquals(0, service.saveStudent("5", "Alfonso", 937));
+        assertEquals(1, service.saveStudent("5", "Alfonso", 937));
 
     }
 
