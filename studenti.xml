@@ -1,19 +1,35 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <Entitati>
+    <student ID="0">
+        <Nume>Alfonso</Nume>
+        <Grupa>934</Grupa>
+    </student>
     <student ID="1">
         <Nume>Ana2</Nume>
         <Grupa>221</Grupa>
     </student>
     <student ID="100">
-        <Nume>alfonso</Nume>
+        <Nume>Alfonso</Nume>
         <Grupa>314</Grupa>
     </student>
     <student ID="2">
         <Nume>Maria</Nume>
         <Grupa>222</Grupa>
     </student>
+    <student ID="3">
+        <Nume>Alfonso</Nume>
+        <Grupa>111</Grupa>
+    </student>
     <student ID="5">
         <Nume>da</Nume>
         <Grupa>931</Grupa>
+    </student>
+    <student ID="7">
+        <Nume>Alfonso</Nume>
+        <Grupa>400</Grupa>
+    </student>
+    <student ID="9">
+        <Nume>akljklfjsf</Nume>
+        <Grupa>123</Grupa>
     </student>
 </Entitati>
