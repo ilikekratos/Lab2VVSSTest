@@ -33,26 +33,13 @@ public class AssignmentTest {
         Validator<Nota> ns = new NotaValidator();
         Validator<Tema> ts = new TemaValidator();
 
-        StudentXMLRepository studentXMLRepository = new StudentXMLRepository(vs, "src/test/java/testing/studenti.xml");
-        NotaXMLRepository notaXMLRepository = new NotaXMLRepository(ns, "src/test/java/testing/note.xml");
-        TemaXMLRepository temaXMLRepository = new TemaXMLRepository(ts, "src/test/java/testing/teme.xml");
+        StudentXMLRepository studentXMLRepository = new StudentXMLRepository(vs, "src/test/java/studenti.xml");
+        NotaXMLRepository notaXMLRepository = new NotaXMLRepository(ns, "src/test/java/note.xml");
+        TemaXMLRepository temaXMLRepository = new TemaXMLRepository(ts, "src/test/java/teme.xml");
         service = new Service(studentXMLRepository, temaXMLRepository, notaXMLRepository);
 
     }
 
-    @After
-    public void tearDown() {
-        try {
-            String defaultFileContent = new String(Files.readAllBytes(Paths.get("src/test/java/testing/defaultFile.xml")), StandardCharsets.UTF_8);
-
-            PrintWriter printWriter = new PrintWriter("src/test/java/testing/teme.xml");
-
-            printWriter.print(defaultFileContent);
-            printWriter.close();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
 
     @Test
     public void testAddAssignmentSuccess() {
