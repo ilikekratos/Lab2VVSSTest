@@ -56,13 +56,13 @@ public class AssignmentTest {
 
     @Test
     public void testAddAssignmentSuccess() {
-        assertEquals(service.saveTema("1", "Instalati docker fratilor", 1, 1), 1);
+        assertEquals(service.saveTema("1", "Instalati docker fratilor", 2, 1), 1);
     }
 
     @Test
     public void testAddAssignmentFailure() {
         // Non unique id failure
-        assertEquals(service.saveTema("7", "g", 8, 7), 1);
-        assertEquals(service.saveTema("7", "g", 8, 7), 0);
+        assertEquals(service.saveTema("7", "Instalati si Jnekins", 3, 2), 1);
+        assertEquals(service.saveTema("7", "Ba m-am razgandit nu mai instalati",3 , 2), 0);
     }
 }
