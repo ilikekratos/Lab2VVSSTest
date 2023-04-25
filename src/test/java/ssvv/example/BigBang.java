@@ -22,9 +22,9 @@ public class BigBang {
         TemaValidator ts = new TemaValidator();
         NotaValidator ns = new NotaValidator();
 
-        StudentXMLRepository studentXMLRepository = new StudentXMLRepository(vs, "src/test/java/studenti.xml");
-        NotaXMLRepository notaXMLRepository = new NotaXMLRepository(ns, "src/test/java/note.xml");
-        TemaXMLRepository temaXMLRepository = new TemaXMLRepository(ts, "src/test/java/teme.xml");
+        StudentXMLRepository studentXMLRepository = new StudentXMLRepository(vs, "studenti.xml");
+        NotaXMLRepository notaXMLRepository = new NotaXMLRepository(ns, "note.xml");
+        TemaXMLRepository temaXMLRepository = new TemaXMLRepository(ts, "teme.xml");
 
         service = new Service(studentXMLRepository, temaXMLRepository, notaXMLRepository);
     }
