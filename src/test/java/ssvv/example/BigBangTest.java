@@ -13,7 +13,7 @@ import ssvv.validation.TemaValidator;
 
 import static org.junit.Assert.assertEquals;
 
-public class BigBang {
+public class BigBangTest {
     private Service service;
 
     @Before
