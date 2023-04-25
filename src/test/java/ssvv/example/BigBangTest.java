@@ -56,16 +56,16 @@ public class BigBangTest {
 
     @Test
     public void testBigBangIntegration() {
-        int addStudentResult = service.saveStudent("1", "John Doe", 933);
-        int addAssignmentResult = service.saveTema("1", "Assignment 1", 3, 1);
-        int addGradeResult = service.saveNota("1", "1", 9.5, 3, "Good job!");
+        int addStudentResult = service.saveStudent("2", "John Doe", 933);
+        int addAssignmentResult = service.saveTema("2", "Assignment 1", 3, 1);
+        int addGradeResult = service.saveNota("2", "2", 9.5, 3, "Good job!");
 
         assertEquals(1, addStudentResult);
         assertEquals(1, addAssignmentResult);
         assertEquals(1, addGradeResult);
 
-        service.deleteTema("1");
-        service.deleteStudent("1");
-        service.deleteNota(new Pair<>("1", "1"));
+        service.deleteTema("2");
+        service.deleteStudent("2");
+        service.deleteNota(new Pair<>("2", "2"));
     }
 }
