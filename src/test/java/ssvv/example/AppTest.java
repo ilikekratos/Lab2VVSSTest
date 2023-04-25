@@ -3,19 +3,18 @@ package ssvv.example;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
-import console.UI;
-import domain.Nota;
-import domain.Student;
-import domain.Tema;
+import ssvv.domain.Nota;
+import ssvv.domain.Student;
+import ssvv.domain.Tema;
 import org.junit.Test;
-import repository.NotaXMLRepository;
-import repository.StudentXMLRepository;
-import repository.TemaXMLRepository;
-import service.Service;
-import validation.NotaValidator;
-import validation.StudentValidator;
-import validation.TemaValidator;
-import validation.Validator;
+import ssvv.repository.NotaXMLRepository;
+import ssvv.repository.StudentXMLRepository;
+import ssvv.repository.TemaXMLRepository;
+import ssvv.service.Service;
+import ssvv.validation.NotaValidator;
+import ssvv.validation.StudentValidator;
+import ssvv.validation.TemaValidator;
+import ssvv.validation.Validator;
 
 /**
  * Unit test for simple App.

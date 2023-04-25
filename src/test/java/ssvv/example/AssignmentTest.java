@@ -1,25 +1,18 @@
 package ssvv.example;
 
-import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
-import domain.Nota;
-import domain.Student;
-import domain.Tema;
-import repository.NotaXMLRepository;
-import repository.StudentXMLRepository;
-import repository.TemaXMLRepository;
-import service.Service;
-import validation.NotaValidator;
-import validation.StudentValidator;
-import validation.TemaValidator;
-import validation.Validator;
-
-import java.io.IOException;
-import java.io.PrintWriter;
-import java.nio.charset.StandardCharsets;
-import java.nio.file.Files;
-import java.nio.file.Paths;
+import ssvv.domain.Nota;
+import ssvv.domain.Student;
+import ssvv.domain.Tema;
+import ssvv.repository.NotaXMLRepository;
+import ssvv.repository.StudentXMLRepository;
+import ssvv.repository.TemaXMLRepository;
+import ssvv.service.Service;
+import ssvv.validation.NotaValidator;
+import ssvv.validation.StudentValidator;
+import ssvv.validation.TemaValidator;
+import ssvv.validation.Validator;
 
 import static org.junit.Assert.assertEquals;
 
