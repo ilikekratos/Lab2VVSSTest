@@ -1,11 +1,6 @@
 package ssvv.example;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
-
-import ssvv.domain.Nota;
-import ssvv.domain.Student;
-import ssvv.domain.Tema;
+import org.junit.Before;
 import org.junit.Test;
 import ssvv.repository.NotaXMLRepository;
 import ssvv.repository.StudentXMLRepository;
@@ -14,27 +9,56 @@ import ssvv.service.Service;
 import ssvv.validation.NotaValidator;
 import ssvv.validation.StudentValidator;
 import ssvv.validation.TemaValidator;
-import ssvv.validation.Validator;
 
-/**
- * Unit test for simple App.
- */
-public class BigBang
-{
-    /**
-     * Rigorous Test :-)
-     */
-    Validator<Student> studentValidator = new StudentValidator();
-    Validator<Tema> temaValidator = new TemaValidator();
-    Validator<Nota> notaValidator = new NotaValidator();
+import static org.junit.Assert.assertEquals;
 
-    StudentXMLRepository fileRepository1 = new StudentXMLRepository(studentValidator, "studenti.xml");
-    TemaXMLRepository fileRepository2 = new TemaXMLRepository(temaValidator, "teme.xml");
-    NotaXMLRepository fileRepository3 = new NotaXMLRepository(notaValidator, "note.xml");
+public class BigBang {
+    private Service service;
 
-    Service service = new Service(fileRepository1, fileRepository2, fileRepository3);
+    @Before
+    public void setUp() {
+        StudentValidator vs = new StudentValidator();
+        TemaValidator ts = new TemaValidator();
+        NotaValidator ns = new NotaValidator();
 
+        StudentXMLRepository studentXMLRepository = new StudentXMLRepository(vs, "src/test/java/studenti.xml");
+        NotaXMLRepository notaXMLRepository = new NotaXMLRepository(ns, "src/test/java/note.xml");
+        TemaXMLRepository temaXMLRepository = new TemaXMLRepository(ts, "src/test/java/teme.xml");
 
+        service = new Service(studentXMLRepository, temaXMLRepository, notaXMLRepository);
+    }
 
+    @Test
+    public void testAddStudent() {
+        int result = service.saveStudent("1", "John Doe", 933);
+        assertEquals(1, result);
+    }
 
+    @Test
+    public void testAddAssignment() {
+        int result = service.saveTema("1", "Assignment 1", 3, 1);
+        assertEquals(1, result);
+    }
+
+    @Test
+    public void testAddGrade() {
+        service.saveStudent("1", "John Doe", 933);
+        service.saveTema("1", "Assignment 1", 3, 1);
+        int result = service.saveNota("1", "1", 9.5, 2, "Good job!");
+        assertEquals(1, result);
+    }
+
+    @Test
+    public void testBigBangIntegration() {
+        int addStudentResult = service.saveStudent("1", "John Doe", 933);
+        int addAssignmentResult = service.saveTema("1", "Assignment 1", 3, 1);
+        int addGradeResult = service.saveNota("1", "1", 9.5, 2, "Good job!");
+
+        assertEquals(0, addStudentResult);
+        assertEquals(0, addAssignmentResult);
+        assertEquals(1, addGradeResult);
+
+        service.deleteTema("1");
+        service.deleteStudent("1");
+    }
 }
