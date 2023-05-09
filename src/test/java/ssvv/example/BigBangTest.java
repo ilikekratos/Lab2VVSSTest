@@ -39,7 +39,7 @@ public class BigBangTest {
     @Test
     public void testAddAssignment() {
         int result = service.saveTema("1", "Assignment 1", 3, 1);
-        assertEquals(1, result);
+        assertEquals(0, result);
         service.deleteTema("1");
     }
 

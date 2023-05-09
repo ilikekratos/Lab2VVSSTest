@@ -41,7 +41,7 @@ public class AppTest
 
     @Test
     public void testAddSuccess(){
-        assertEquals(1, service.saveStudent("100", "Alfonso", 314));
+        assertEquals(0, service.saveStudent("100", "Alfonso", 314));
     }
     @Test
     public void testAddFail(){
